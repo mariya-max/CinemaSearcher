@@ -15,9 +15,9 @@ import io.realm.RealmResults;
 
 public class Converter {
 
-    List<FilmRealm> films = null;
-    RealmList<GenresRealm> genres = null;
-    Set<GenresRealm> genresFilm = null;
+    protected List<FilmRealm> films = null;
+    protected RealmList<GenresRealm> genres = null;
+    protected Set<GenresRealm> genresFilm = null;
 
     public List<FilmRealm> convertToFilmsList(Data data) {
         films = new ArrayList<>();

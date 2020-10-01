@@ -19,7 +19,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private static ClickListener clickListener;
     private int selectedPos = RecyclerView.NO_POSITION;
     private RealmResults<GenresRealm> genresRealms;
-    Context context;
+    protected Context context;
 
     public MainAdapter(RealmResults<GenresRealm> genresRealms, Context context) {
         this.genresRealms = genresRealms;
@@ -50,7 +50,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView textView;
+        private TextView textView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

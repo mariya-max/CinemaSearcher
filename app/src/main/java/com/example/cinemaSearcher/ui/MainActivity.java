@@ -29,13 +29,13 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<FilmRealm> filmRealms;
-    Set<GenresRealm> genresRealms;
-    Fragment fragment;
-    Data data;
-    RealmController realmController;
-    Converter converter;
-    FrameLayout frameLayout;
+    protected List<FilmRealm> filmRealms;
+    protected Set<GenresRealm> genresRealms;
+    protected Fragment fragment;
+    private Data data;
+    private RealmController realmController;
+    private Converter converter;
+    protected FrameLayout frameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

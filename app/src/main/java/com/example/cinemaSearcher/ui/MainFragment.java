@@ -27,19 +27,16 @@ import io.realm.RealmResults;
 
 public class MainFragment extends Fragment {
 
-    TextView textView;
-    RecyclerView recyclerView;
-    RecyclerView recycler;
-    RealmResults<GenresRealm> genresRealms;
-    RealmResults<FilmRealm> filmRealms;
-    RealmController controller;
-    String genres;
-    View view;
-    MainAdapter adapter;
-    FilmAdapter filmAdapter;
-
-    private int someStateValue;
-    private final String SOME_VALUE_KEY = "someValueToSave";
+    protected TextView textView;
+    private RecyclerView recyclerView;
+    private RecyclerView recycler;
+    private RealmResults<GenresRealm> genresRealms;
+    private RealmResults<FilmRealm> filmRealms;
+    private RealmController controller;
+    private String genres;
+    private View view;
+    protected MainAdapter adapter;
+    private FilmAdapter filmAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,19 +45,9 @@ public class MainFragment extends Fragment {
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt(SOME_VALUE_KEY, someStateValue);
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        if (savedInstanceState != null) {
-            someStateValue = savedInstanceState.getInt(SOME_VALUE_KEY);
-        }
         init(inflater, container);
         refreshData();
         initRecyclerView();
@@ -77,7 +64,7 @@ public class MainFragment extends Fragment {
         filmRealms = controller.getAllFilms();
     }
 
-    public void init(LayoutInflater inflater, ViewGroup container) {
+    private void init(LayoutInflater inflater, ViewGroup container) {
         view = inflater.inflate(R.layout.fragment_main, container, false);
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);

@@ -19,9 +19,8 @@ import io.realm.RealmResults;
 public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
 
     private static ClickListeners clickListeners;
-
     private RealmResults<FilmRealm> filmRealms;
-    Context context;
+    private Context context;
 
     public FilmAdapter(RealmResults<FilmRealm> filmRealms, Context context) {
         this.filmRealms = filmRealms;
@@ -54,8 +53,8 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView imageView;
-        TextView textView;
+        private ImageView imageView;
+        private TextView textView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

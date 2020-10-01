@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class App extends Application {
 
-    String BASE_URL = "https://s3-eu-west-1.amazonaws.com/sequeniatesttask/";
+    protected String BASE_URL = "https://s3-eu-west-1.amazonaws.com/sequeniatesttask/";
 
     private static DataApi dataApi;
 

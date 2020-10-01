@@ -22,16 +22,16 @@ import io.realm.RealmResults;
 
 public class FilmFragment extends Fragment {
 
-    ImageView imageView;
-    TextView locName;
-    TextView name;
-    TextView year;
-    TextView rating;
-    TextView description;
-    Context context;
-    View view;
-    Toolbar toolbar;
-    RealmResults<FilmRealm> filmRealms;
+    private ImageView imageView;
+    private TextView locName;
+    private TextView name;
+    private TextView year;
+    private TextView rating;
+    private TextView description;
+    private Context context;
+    private View view;
+    private Toolbar toolbar;
+    private RealmResults<FilmRealm> filmRealms;
 
     public FilmFragment(Context context, RealmResults<FilmRealm> filmRealms) {
         this.context = context;
@@ -52,7 +52,7 @@ public class FilmFragment extends Fragment {
         return view;
     }
 
-    public void init(LayoutInflater inflater, ViewGroup container) {
+    private void init(LayoutInflater inflater, ViewGroup container) {
         view = inflater.inflate(R.layout.fragment_film, container, false);
 
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
@@ -73,7 +73,7 @@ public class FilmFragment extends Fragment {
         description = view.findViewById(R.id.description);
     }
 
-    public void fillView() {
+    private void fillView() {
         Bundle bundle = this.getArguments();
         assert bundle != null;
         Integer integer = bundle.getInt("id");
